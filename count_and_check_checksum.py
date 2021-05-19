@@ -20,7 +20,6 @@ def do_it(path_to_file, path_to_dir):
                 file_name, algorithm, etalon_hash = line.split()
 
                 try:
-                    text = open(path_to_dir + file_name, "rb").read().rstrip()
                     if algorithm == "md5":
                         real_hash = hashlib.md5(open(path_to_dir + file_name, "rb").read()).hexdigest()
                     elif algorithm == "sha1":
@@ -36,7 +35,7 @@ def do_it(path_to_file, path_to_dir):
                 except FileNotFoundError:
                     print(file_name, "NOT FOUND")
     except ValueError:
-        print("недостаточно аргументов")
+        print("Ошибка. Проверьте корректность файла checksum_for_files.txt")
 
 
 path_to_file, path_to_dir = receive_arguments()

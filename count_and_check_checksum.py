@@ -12,7 +12,7 @@ def receive_arguments():
         raise SystemExit
 
 
-def do_it(path_to_file, path_to_dir):
+def count_and_check_checksum(path_to_file, path_to_dir):
     try:
         with open(path_to_file) as f:
             for line in f:
@@ -20,13 +20,12 @@ def do_it(path_to_file, path_to_dir):
                 file_name, algorithm, etalon_hash = line.split()
 
                 try:
-                    text = open(path_to_dir + file_name, "rb").read().rstrip()
                     if algorithm == "md5":
                         real_hash = hashlib.md5(open(path_to_dir + file_name, "rb").read()).hexdigest()
                     elif algorithm == "sha1":
                         real_hash = sha1(open(path_to_dir + file_name, "rb").read()).hexdigest()
                     elif algorithm == "sha256":
-                        real_hash = sha256(open(path_to_dir + file_name, "rb").read()).hexdigest()
+                        real_hash = hashlib.sha256(open(path_to_dir + file_name, "rb").read()).hexdigest()
 
                     if etalon_hash == real_hash:
                         print(file_name, "OK")
@@ -36,8 +35,8 @@ def do_it(path_to_file, path_to_dir):
                 except FileNotFoundError:
                     print(file_name, "NOT FOUND")
     except ValueError:
-        print("недостаточно аргументов")
+        print("Ошибка. Проверьте корректность файла checksum_for_files.txt")
 
 
 path_to_file, path_to_dir = receive_arguments()
-do_it(path_to_file, path_to_dir)
+count_and_check_checksum(path_to_file, path_to_dir)

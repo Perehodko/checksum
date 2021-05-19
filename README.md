@@ -16,7 +16,9 @@ file_03.bin md5 6dc2d05c8374293fe20bc4c22c236e2e
 file_04.txt sha1 da39a3ee5e6b4b0d3255bfef95601890afd80709
 
 **Пример вызова:** 
+```
 <your program> <path to the input file> <path to the directory containing the files to check>
+```
 
 **Формат вывода:**
 
@@ -28,6 +30,7 @@ file_03.bin NOT FOUND
 
 file_04.txt OK
 
+------------------------------------------------------------------------------------
 **Как работать**
 
 1) Склонировать репозиторий.

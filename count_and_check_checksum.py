@@ -27,7 +27,7 @@ def count_and_check_checksum(path_to_file, path_to_dir):
                     elif algorithm == "sha256":
                         real_hash = hashlib.sha256(open(path_to_dir + file_name, "rb").read()).hexdigest()
                     else:
-                        raise Exception("Algorithm {} not found".format(algorithm))
+                        raise Exception(f"Algorithm {algorithm} not found")
 
                     if etalon_hash == real_hash:
                         print(file_name, "OK")

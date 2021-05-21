@@ -44,5 +44,5 @@ python3 count_and_check_checksum.py <path to the input file> <path to the direct
 ```
 Для примера можно использовать файл checksum_for_files.txt и файлы из директории files/, которые лежат в репозитории:
 ```
-python3 count_and_check_checksum.py checksum_for_files.txt files/
+count_and_check_checksum.py checksum_for_files.txt files/
 ```

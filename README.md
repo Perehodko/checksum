@@ -40,7 +40,7 @@ sudo chmod +x count_and_check_checksum.py
 ```
 **Как запускать:**
 ```
-python3 count_and_check_checksum.py <path to the input file> <path to the directory containing the files to check>
+count_and_check_checksum.py <path to the input file> <path to the directory containing the files to check>
 ```
 Для примера можно использовать файл checksum_for_files.txt и файлы из директории files/, которые лежат в репозитории:
 ```

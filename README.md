@@ -36,7 +36,7 @@ file_04.txt OK
 1) Склонировать репозиторий.
 2) Сделать файл count_and_check_checksum.py исполняемым:
 ```
-sudo chmod +x count_and_check_checksum.py
+chmod +x count_and_check_checksum.py
 ```
 **Как запускать:**
 ```

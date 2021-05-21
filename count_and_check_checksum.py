@@ -6,7 +6,17 @@ import sys
 def receive_arguments():
     try:
         path_to_file, path_to_dir = sys.argv[1], sys.argv[2]
+
+        dir_path = path_to_dir[-1:]
+        file_path = path_to_file[-1:]
+
+        if dir_path != "/":
+            '/'.join(path_to_dir)
+        if file_path == '/':
+            path_to_file = path_to_file.rstrip('/')
+
         return path_to_file, path_to_dir
+
     except IndexError as e:
         print("Arguments: {}!".format(e))
         raise SystemExit
